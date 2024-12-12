@@ -20,39 +20,23 @@
     }
   },
   "targetDefaults": {
-    "dev": {
-      "dependsOn": ["build"],
-      "configurations": {},
-      "options": {}
-    },
-    "serve": {
-      "dependsOn": ["build"]
-    },
-    "build-inline-fns": {
-      "dependsOn": ["^build"],
-      "outputs": ["{projectRoot}/src"]
-    },
+    "dev": { "dependsOn": ["build"], "configurations": {}, "options": {} },
+    "serve": { "dependsOn": ["build"] },
+    "build-inline-fns": { "dependsOn": ["^build"], "outputs": ["{projectRoot}/src"] },
     "build": {
       "dependsOn": ["^build", "prebuild"],
       "outputs": ["{projectRoot}/dist"],
       "executor": "nx:run-script",
-      "options": {
-        "script": "build"
-      }
+      "options": { "script": "build" }
     },
-    "typecheck": {
-      "dependsOn": ["^build"]
-    },
-    "release": {
-      "dependsOn": ["build"]
-    }
+    "typecheck": { "dependsOn": ["^build"] },
+    "release": { "dependsOn": ["build"] }
   },
-  "affected": {
-    "defaultBase": "main"
-  },
+  "affected": { "defaultBase": "main" },
   "namedInputs": {
     "default": ["{projectRoot}/**/*", "sharedGlobals"],
     "sharedGlobals": [],
     "production": ["default"]
-  }
+  },
+  "nxCloudAccessToken": "M2QzNmJhNTYtZDQ2MC00YTVjLTk2MWItZmNjMTQyMGZjMTc1fHJlYWQtd3JpdGU="
 }
